@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+  let pressed = [];
+  const secretKey = "khaled"
+  window.addEventListener('keyup', function(e){
+    pressed.push(e.key);
+    pressed.splice(-secretKey.length -1 , pressed.length - secretKey.length); // -5,1
+    if(pressed.join('') === secretKey){
+      cornify_add();
+    }
+    console.log(pressed);
+  })
+</script>
+</body>
+</html>
